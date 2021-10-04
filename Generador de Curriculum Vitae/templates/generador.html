@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form class="form-register" action="{{ url_for('index') }}" method="post">
+    <h4>
+        En estos momentos nos encontramos en mantenimiento.<br>
+        Vuelve Pronto!
+    </h4>
+    
+    <button class = "botons"><a href="{{url_for('index')}}">Regresar</a></button>
+</form>
+{% endblock %}

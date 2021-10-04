@@ -34,3 +34,10 @@ def index():
 @app.route("/condiciones")
 def condiciones():
     return render_template("condiciones.html")
+
+@app.route("/curriculums")
+def curriculums():
+    return render_template("curriculums.html")
+@app.route("/generador")
+def generador():
+    return render_template("generador.html")
