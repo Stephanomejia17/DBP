@@ -1,28 +1,12 @@
 {% extends "layout.html" %}
-<head>
-    <script type="text/javascript">
-        function validar()
-        {
-            var usuario = getElementById("username").value;
-            var contrasena = getElementById("password").value;
 
-            if(usuario!="" && contrasena != "")
-            {
-                alert("Login satisfactorio");
-            }
-            else{
-                alert("Verifique los datos ingresados");
-            }
-        }
 
-    </script>
-</head>
 {% block body %}
-
+    
     <form class="form-register" action="{{ url_for('index') }}" method="post">
         <h4>Login</h4>
         <input class = "controls" type="text" name="username" id="username" placeholder="Enter your username here">
-        <input class = "controls" type="text" name="password" id="password" placeholder="Enter your password here">
+        <input class = "controls" type="password" name="password" id="password" placeholder="Enter your password here">
         
         <p>Estoy de acuerdo con <a href="{{ url_for('condiciones') }}">Terminos y Condiciones</a></p>
         <button class = "botons" onclick="validar()"><a href="{{url_for('cuestionario')}}">Ingresar</a></button>
