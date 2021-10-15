@@ -1,19 +1,32 @@
 {% extends "layout.html" %}
+<head>
+    <script type="text/javascript">
+        function validar()
+        {
+            var usuario = getElementById("username").value;
+            var contrasena = getElementById("password").value;
 
+            if(usuario!="" && contrasena != "")
+            {
+                alert("Login satisfactorio");
+            }
+            else{
+                alert("Verifique los datos ingresados");
+            }
+        }
+
+    </script>
+</head>
 {% block body %}
 
     <form class="form-register" action="{{ url_for('index') }}" method="post">
-        <h4>Formulario</h4>
-        <input class = "controls" type="text" name="nombres" id="nombres" placeholder="Enter your name here">
-        <input class = "controls" type="text" name="apellidos" id="apellidos" placeholder="Enter your surname here">
-        <input class = "controls" type="text" name="correo" id="correo" placeholder="Enter your mail here">
-        <input class = "controls" type="text" name="number" id="number" placeholder="Enter your phone number here">
-        <input class = "controls" type="text" name="estudios" id="estudios" placeholder="Enter your university here">
-        <input class = "controls" type="text" name="habilities" id="habilidades" placeholder="Enter your skills here">
-        <input class = "controls" type="text" name="presentacion" id="presentacion" placeholder="Enter a presentation here">
-        <input class = "controls" type="text" name="experiencia" id="experiencia" placeholder="Enter your experiences here">
+        <h4>Login</h4>
+        <input class = "controls" type="text" name="username" id="username" placeholder="Enter your username here">
+        <input class = "controls" type="text" name="password" id="password" placeholder="Enter your password here">
+        
         <p>Estoy de acuerdo con <a href="{{ url_for('condiciones') }}">Terminos y Condiciones</a></p>
-        <button class = "botons"><a href="{{url_for('curriculums')}}">Registrar</a></button>
+        <button class = "botons" onclick="validar()"><a href="{{url_for('cuestionario')}}">Ingresar</a></button>
+        <p>Aun no tienes una cuenta? <a href="{{ url_for('register') }}">Crea una!</a></p>
         
     </form>
 

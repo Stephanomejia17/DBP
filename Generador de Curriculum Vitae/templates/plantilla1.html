@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Curriculum Vitae!</title><style>
+            aside, article, footer, section, nav, header{
+              display:block;
+              margin:0;
+              padding:0;
+            }
+            p,h1,h2,h3{
+              margin:0;
+              padding:0;
+            }
+            html, body{
+              margin:0;
+              padding:0;
+            }
+            html{
+              background:#FFF;
+            }
+	    
+            
+            
+            article{
+              height:10px;
+              
+            }
+            
+            footer{
+              height:20px;
+              background:#898c70;
+            }
+            h2 {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                color: #BFB6C2;
+                text-align: center;
+            }
+            h3 {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                color: #BFB6C2;
+            }
+            h4 {
+                color: #BFB6C2;
+                font-family: Calibri light;
+            }
+            h5 {
+                color: #BFB6C2;
+                font-family: Calibri light;
+            }
+            .circulo {
+                width: 150px;
+                height: 150px;
+                border-radius: 100%;
+            }
+            .circulo > .imagen{
+                width: 5%;
+                height: 10%;
+                border-radius: 100%;
+                position: absolute; z-index: 2;left: 73px;top: 3em;
+                z-index: 1;
+
+            }
+            .fondo {
+                background-image: url(fondo.jpg);
+                background-repeat: no-repeat;
+                position: absolute;
+                z-index: -1;
+            }
+        </style>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+  <body>
+    <section>
+      <article>
+        <div class="circulo">
+            <img src="static/Me.JPEG" alt="Me" class="imagen">
+	          <img src = "static/fondo.JPEG" alt="Fondo" class="fondo">
+        </div>
+        <h3>
+            {% block name %}{% endblock %} <br>
+            {% block lastname %} {% endblock %}
+        </h3>
+        
+        <h4>{% block profesion %} {% endblock %}</h4>
+        <p>
+            <h3>
+                PERFIL COMERCIAL
+                <h5>
+                    {% block experiencia %} {% endblock %}
+                </h5>
+                <h3>APTITUDES</h3>
+                <h5>
+                    {% block habilidades %} {% endblock %}
+                </h5>
+                <h3>CONTACTO</h3>
+                <h5>
+                    Telefono: {% block numero %} {% endblock %} <br>
+                    Correo: {% block mail %} {% endblock %} <br>
+                    Universidad: {% block universidad %} {% endblock %}
+                </h5>
+            </h3>
+      </article>
+      <aside><h2 align= "center"><u>Programador Web</u></h2>
+
+      <p align = "center">
+        Banco Santander<br>
+        - Escribí el código de una página Web con la capacidad de recibir a más <br> de un millón de usuarios diariamente. <br> - Responsable de crear un comparador de tarjetas de crédito que <br> elevó las ventas del producto en un 15%. <br> - Desarrollé una aplicación bancaria especializada en seguros de auto <br> la cual recibió una calificaión de 4.8 estrellas.
+      </p>
+
+      <h2 align="center"><u>Desarrollo Web</u></h2>
+      <p align = "center">
+        Flame Analytics<br>
+        A lo  largo de mi estancia  participé en más de 15 proyectos digitales y <br> colaboré con un equipo de diseñadores, copywriters creativos, project<br> managers y QEA testers.<br>
+        Reduje el porcentaje de errores mensuales de la página de inicio del<br> portal de la compañia en un 10%.<br>
+        - Como parte del comité de mejoras continuas de la empresa, colaboré <br> para optimizar los tiempos de carga de la página web en un 15%. 
+      </p>
+      <h2 align = "center"><u>Educación</u></h2>
+      <p align = "center"> 
+        Ingeniería Técnica en Información de Sistemas<br> Universidad Complutense de Madrid<br> - Graduado con la nota más alta de la generación. <br> - 3er lugar en el Hackaton Codefest 2014<br>- Ganador de la beca de Excelencia Académica 2012. 
+      </p>
+      <h2 align = "center">Información adicional</h2>
+      <p align = "center">- Permiso de conducir B y auto propio. <br>- Disponibilidad inmediata.</p></aside>
+    </section>
+  
+    </body>
+</html>

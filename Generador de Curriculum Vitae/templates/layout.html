@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Generador de Curriculum Vitae!</title>
+        <title>{% block title %} {% endblock %}</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     </head>
     <body>
-        <h1>{% block heading %}{% endblock %}</h1>
+        
 
         {% block body %}
         {% endblock %}

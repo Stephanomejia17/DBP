@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <form class="form-register" action="{{ url_for('index') }}" method="post">
+        <h4>Register</h4>
+        <input class = "controls" type="text" name="correo" id="correo" placeholder="Enter your mail here">
+        <input class = "controls" type="text" name="username" id="username" placeholder="Enter your username here">
+        <input class = "controls" type="text" name="password1" id="password1" placeholder="Enter your password here">
+        <input class = "controls" type="text" name="password2" id="password2" placeholder="Enter your password again">
+        
+        <p>Estoy de acuerdo con <a href="{{ url_for('condiciones') }}">Terminos y Condiciones</a></p>
+        <button class = "botons"><a href="{{url_for('index')}}">Registrar</a></button>
+        
+    </form>
+
+    
+{% endblock %}
