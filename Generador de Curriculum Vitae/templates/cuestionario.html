@@ -1,10 +1,26 @@
 {% extends "layout.html" %}
 
 {% block body %}
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+            document.querySelector('#cuestionario').onsubmit = () => {
+                localStorage.setItem('nombre', document.querySelector('#nombre').value);
+                localStorage.setItem('apellido', document.querySelector('#apellido').value);
+                localStorage.setItem('profesion', document.querySelector('#profesion').value);
+                localStorage.setItem('correo', document.querySelector('#correo').value); 
+                localStorage.setItem('numero', document.querySelector('#number').value); 
+                localStorage.setItem('estudios', document.querySelector('#estudios').value); 
+                localStorage.setItem('habilidades', document.querySelector('#habilidades').value); 
+                localStorage.setItem('presentacion', document.querySelector('#presentacion').value); 
+                localStorage.setItem('experiencia', document.querySelector('#experiencia').value);                     
+            }
 
-    <form class="form-register" action="{{ url_for('generador') }}" method="post">
+        });
+    </script>
+    <form class="form-register" action="{{ url_for('curriculums') }}" method="post" id="cuestionario">
         <h4>Data</h4>
-        <input class = "controls" type="text" name="nombrecompleto" id="nombrecompleto" placeholder="Enter your fullname here">
+        <input class = "controls" type="text" name="nombre" id="nombre" placeholder="Enter your name here">
+        <input class = "controls" type="text" name="apellido" id="apellido" placeholder="Enter your last name here">
         <input class = "controls" type="text" name="profesion" id="profesion" placeholder="Enter your profession here">
         <input class = "controls" type="text" name="correo" id="correo" placeholder="Enter your mail here">
         <input class = "controls" type="text" name="number" id="number" placeholder="Enter your phone number here">
@@ -12,7 +28,8 @@
         <input class = "controls" type="text" name="habilities" id="habilidades" placeholder="Enter your skills here">
         <input class = "controls" type="text" name="presentacion" id="presentacion" placeholder="Enter a presentation here">
         <input class = "controls" type="text" name="experiencia" id="experiencia" placeholder="Enter your experiences here">
-        <button class = "botons" id="botonregistro"><a href="{{url_for('curriculums')}}">Siguiente</a></button>
+        <input class = "botons" type="submit" name="boton" value="Siguiente">
+        
         
     </form>
     
