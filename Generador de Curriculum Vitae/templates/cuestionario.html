@@ -17,7 +17,7 @@
 
         });
     </script>
-    <form class="form-register" action="{{ url_for('curriculums') }}" method="POST" id="cuestionario">
+    <form class="form-register" action="/curriculums" method="POST" id="cuestionario">
         <h4>Data</h4>
         <input class = "controls" type="text" name="nombre" id="nombre" placeholder="Enter your name here">
         <input class = "controls" type="text" name="apellido" id="apellido" placeholder="Enter your last name here">
@@ -29,6 +29,7 @@
         <input class = "controls" type="text" name="presentacion" id="presentacion" placeholder="Enter a presentation here">
         <input class = "controls" type="text" name="experiencia" id="experiencia" placeholder="Enter your experiences here">
         <input class = "botons" type="submit" name="boton" value="Siguiente">
+        <a href="/logout" type="button" class="botons">Cerrar sesion</a>
         
         
     </form>
