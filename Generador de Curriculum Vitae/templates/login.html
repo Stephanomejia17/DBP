@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+            document.querySelector('#login').onsubmit = () => {
+                localStorage.setItem('username', document.querySelector('#username').value);
+                localStorage.setItem('password', document.querySelector('#password').value);                    
+            }
+            
+        });
+    </script>
+    <form class="form-register" action="/cuestionario" method="POST" id="login">
+        <h4>Login</h4>
+        <input class = "controls" type="text" name="username" id="username" placeholder="Enter your username here">
+        <input class = "controls" type="password" name="password" id="password" placeholder="Enter your password here">
+        <p>Estoy de acuerdo con <a href="{{ url_for('condiciones') }}">Terminos y Condiciones</a></p>
+        <input class = "botons" type="submit" name="boton" value="Ingresar">
+        <p>Aun no tienes una cuenta? <a href="{{ url_for('register') }}">Crea una!</a></p>
+        
+    </form>
+
+    
+{% endblock %}
