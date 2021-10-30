@@ -1,7 +1,123 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Curriculum Vitae!</title><style>
+            aside, article, footer, section, nav, header{
+              display:block;
+              margin:0;
+              padding:0;
+            }
+            p,h1,h2,h3{
+              margin:0;
+              padding:0;
+            }
+            html, body{
+              margin:0;
+              padding:0;
+            }
+            html{
+              background:#FFF;
+            }
+	    
+            
+            
+            article{
+              height:10px;
+              
+            }
+            
+            footer{
+              height:20px;
+              background:#898c70;
+            }
+            h2 {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                color: #86cadb;
+                text-align: center;
+            }
+            h3 {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                color: #86cadb;
+            }
+            h4 {
+                color: #86cadb;
+                font-family: Calibri light;
+            }
+            h5 {
+                color: #86cadb;
+                font-family: Calibri light;
+            }
+            .circulo {
+                width: 150px;
+                height: 150px;
+                border-radius: 100%;
+            }
+            .circulo > .imagen{
+                width: 5%;
+                height: 10%;
+                border-radius: 100%;
+                position: absolute; z-index: 2;left: 73px;top: 3em;
+                z-index: 1;
 
-{% block body %}
+            }
+            .fondo {
+                background-image: url(fondo.jpg);
+                background-repeat: no-repeat;
+                position: absolute;
+                z-index: -1;
+            }
+        </style>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+  <body>
+    <section>
+      <article>
+        <div class="circulo">
+            <img src="static/Me.JPEG" alt="Me" class="imagen">
+	          <img src = "static/fondo2.jpg" alt="Fondo" class="fondo">
+        </div>
+        <h3>
+            {{nombre}} <br>
+            {{apellido}}
+        </h3>
+        
+        <h4>{{profesion}}</h4>
+        
+            <h3>
+      
+                <h3>CONTACTO</h3>
+                <h5>
+                    Numero: {{numero}}
+                    Correo: {{correo}} <br>
+                    Universidad: {{estudios}}
+                </h5>
+            </h3>
+      </article>
+      <aside>
+        <h2 align= "center"><u>PRESENTACION</u></h2>
 
+        <p align = "center">
+          {{presentacion}}
+        </p>
+      
+      <h2 align= "center"><u>EXPERIENCIAS</u></h2>
 
+      <p align = "center">
+        {{experiencia}}
+      </p>
+      
+      <h2 align="center"><u>APTITUDES</u></h2>
+      <p align = "center">
+        {{habilidades}}
+      </p>
 
-{% endblock %}
+      <h2 align = "center"><u>LOGROS</u></h2>
+      <p align = "center"> 
+        {{logros}}
+      </p>
+      <h2 align = "center"><u>Información adicional</u></h2>
+      <p align = "center">- {{info}}</p></aside>
+    </section>
+  
+    </body>
+</html>

@@ -1,13 +1,15 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<form class="form-register" action="{{ url_for('curriculums') }}" method="post">
+<form class="form-register" action="{{ url_for('plantilla1') }}" method="post">
     <h4>Curriculums</h4>
     <img src="static/curriculum1.jpg" width="150px" height="200px"/>
     <img src="static/curriculum2.jpg" width="150px" height="200px"/>
     <br>
-    <a href="{{'plantilla1'}}" class="botons">Opcion 1</a>
-    <a href="{{'plantilla2'}}" class="botons">Opcion 2</a>
+    
+    <input href="{{url_for('plantilla1')}}"class="botons" type="submit" value="Opcion 1">
+    
+    <input href="{{url_for('plantilla1')}}" class="botons" type="submit" value="Opcion 2">
     
     
 </form>

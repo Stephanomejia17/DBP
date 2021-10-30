@@ -30,15 +30,15 @@ def logout():
     session.clear()
     return redirect(url_for('index'))
     
-@app.route("/No_Register", methods=["POST", "GET"])
+@app.route("/No_Register", methods=["POST"])
 def No_Register():
     return render_template("No_Register.html")
 
-@app.route("/register", methods=["POST", "GET"])
+@app.route("/register", methods=["POST"])
 def register():
     return render_template("register.html")
 
-@app.route("/condiciones", methods=["POST", "GET"])
+@app.route("/condiciones", methods=["POST"])
 def condiciones():
     return render_template("condiciones.html")
 
@@ -61,9 +61,30 @@ def plantilla1():
 
 
     return render_template("plantilla1.html",nombre=nombre,apellido=apellido,profesion=profesion,correo=correo,estudios=estudios,habilidades=habilidades,presentacion=presentacion,experiencia=experiencia,logros=logros,info=info)
-@app.route("/plantilla2", methods=["GET","POST"])
+@app.route("/plantilla2", methods=["POST"])
 def plantilla2():
-    return render_template("plantilla2.html")
+    nombre = request.form.get("nombre")
+    apellido = request.form.get("apellido")
+    profesion = request.form.get("profesion")
+    correo = request.form.get("correo")
+    estudios = request.form.get("estudios")
+    habilidades = request.form.get("habilidades")
+    presentacion = request.form.get("presentacion")
+    experiencia = request.form.get("experiencia")
+    logros = request.form.get("logros")
+    info = request.form.get("info")
+
+
+    return render_template("plantilla2.html",nombre=nombre,apellido=apellido,profesion=profesion,correo=correo,estudios=estudios,habilidades=habilidades,presentacion=presentacion,experiencia=experiencia,logros=logros,info=info)
+
+@app.route("/generador", methods=["POST"])
+def generador():
+    if True:
+        return redirect(url_for('plantilla1'))
+    else:
+        return redirect(url_for('plantilla2'))
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

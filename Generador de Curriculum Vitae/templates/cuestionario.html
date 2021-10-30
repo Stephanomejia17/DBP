@@ -2,7 +2,7 @@
 
 {% block body %}
     
-    <form class="form-register" action="{{url_for('plantilla1')}}" method="post" id="cuestionario">
+    <form class="form-register" action="{{url_for('generador')}}" method="post" id="cuestionario">
         <h4>Data</h4>
         <input class = "controls" type="text" name="nombre" id="nombre" placeholder="Enter your name here">
         <input class = "controls" type="text" name="apellido" id="apellido" placeholder="Enter your last name here">
@@ -15,6 +15,14 @@
         <input class = "controls" type="text" name="experiencia" id="experiencia" placeholder="Enter your experiences here">
         <input class = "controls" type="text" name="logros" id="logros" placeholder="Enter your achievements here">
         <input class = "controls" type="text" name="info" id="info" placeholder="Enter additional information here">
+        <h4>Curriculums</h4>
+        <img src="static/curriculum1.jpg" width="150px" height="200px"/>
+        <img src="static/curriculum2.jpg" width="150px" height="200px"/>
+        <select name="rol">
+            <option selected>Open this select menu</option>
+            <option value="Opcion 1">Opcion 1</option>
+            <option value="Opcion 2">Opcion 2</option>
+        </select>
         <input class="botons" type="submit" value="Siguiente">
         <a href="/logout" class="botons">Cerrar sesion</a>
 
