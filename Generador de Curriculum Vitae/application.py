@@ -1,73 +1,69 @@
-from flask import Flask, render_template, request, session, redirect, url_for
-from flask_session import Session
+from flask import Flask, redirect, session,render_template, request, url_for
 
 app = Flask(__name__)
-app.secret_key = "abcd1234"
+app.secret_key = "abcd1234" #encriptar inicio de sesion
 
 @app.route('/')
 def index():
-    return render_template('login.html')
-
+    return render_template("login.html")
 @app.route('/login', methods=["POST"])
 def login():
     if request.method == "POST":
-        username = request.form['username']
+        email = request.form['email']
         password = request.form['password']
-        session['user'] = username
+        session['user1'] = email
+        session['pass'] = password
+
         return redirect(url_for('cuestionario'))
     else:
-        return "bad"
+        return "bad request"
 
 @app.route('/cuestionario')
 def cuestionario():
-
-    if 'user' in session:
-        fullname = request.form['fullname']
-        profesion = request.form['profesion']
-        correo = request.form['correo']
-        number = request.form['number']
-        estudios = request.form['estudios']
-        habilidades = request.form['habilidades']
-        presentacion = request.form['presentacion']
-        experiencia = request.form['experiencia']
+    if 'user1' in session and 'pass' in session:
         return render_template("cuestionario.html")
     else:
-        return "No tiene permisos para acceder"
-
+        return redirect(url_for('No_Register'))
+    
 @app.route('/logout')
 def logout():
-
-    if 'user' in session:
-        session.clear()
-        return redirect(url_for('login'))
+    session.clear()
+    return redirect(url_for('index'))
     
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route("/No_Register", methods=["POST", "GET"])
+def No_Register():
+    return render_template("No_Register.html")
 
-    
-
-@app.route("/register", methods=["POST"])
+@app.route("/register", methods=["POST", "GET"])
 def register():
-    correo = request.form['correo']
-    username = request.form['username']
-    password1 = request.form['password1']
-    
     return render_template("register.html")
 
-
-    
-
-
-@app.route("/condiciones", methods=["POST"])
+@app.route("/condiciones", methods=["POST", "GET"])
 def condiciones():
     return render_template("condiciones.html")
 
-@app.route("/curriculums", methods=["GET","POST"])
+@app.route("/curriculums", methods=["POST"])
 def curriculums():
     return render_template("curriculums.html")
-@app.route("/generador", methods=["GET","POST"])
-def generador():
-    return render_template("generador.html")
-@app.route("/plantilla1", methods=["GET","POST"])
+
+@app.route("/plantilla1", methods=["POST"])
 def plantilla1():
-    return render_template("plantilla1.html")
+    nombre = request.form.get("nombre")
+    apellido = request.form.get("apellido")
+    profesion = request.form.get("profesion")
+    correo = request.form.get("correo")
+    estudios = request.form.get("estudios")
+    habilidades = request.form.get("habilidades")
+    presentacion = request.form.get("presentacion")
+    experiencia = request.form.get("experiencia")
+    logros = request.form.get("logros")
+    info = request.form.get("info")
+
+
+    return render_template("plantilla1.html",nombre=nombre,apellido=apellido,profesion=profesion,correo=correo,estudios=estudios,habilidades=habilidades,presentacion=presentacion,experiencia=experiencia,logros=logros,info=info)
+@app.route("/plantilla2", methods=["GET","POST"])
+def plantilla2():
+    return render_template("plantilla2.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)

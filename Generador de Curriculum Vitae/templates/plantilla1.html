@@ -77,49 +77,46 @@
 	          <img src = "static/fondo.JPEG" alt="Fondo" class="fondo">
         </div>
         <h3>
-            {% block name %}{% endblock %} <br>
-            {% block lastname %} {% endblock %}
+            {{nombre}} <br>
+            {{apellido}}
         </h3>
         
-        <h4>{% block profesion %} {% endblock %}</h4>
-        <p>
+        <h4>{{profesion}}</h4>
+        
             <h3>
-                PERFIL COMERCIAL
-                <h5>
-                    {% block experiencia %} {% endblock %}
-                </h5>
-                <h3>APTITUDES</h3>
-                <h5>
-                    {% block habilidades %} {% endblock %}
-                </h5>
+      
                 <h3>CONTACTO</h3>
                 <h5>
-                    Telefono: {% block numero %} {% endblock %} <br>
-                    Correo: {% block mail %} {% endblock %} <br>
-                    Universidad: {% block universidad %} {% endblock %}
+                    Numero: {{numero}}
+                    Correo: {{correo}} <br>
+                    Universidad: {{estudios}}
                 </h5>
             </h3>
       </article>
-      <aside><h2 align= "center"><u>Programador Web</u></h2>
+      <aside>
+        <h2 align= "center"><u>PRESENTACION</u></h2>
+
+        <p align = "center">
+          {{presentacion}}
+        </p>
+      
+      <h2 align= "center"><u>EXPERIENCIAS</u></h2>
 
       <p align = "center">
-        Banco Santander<br>
-        - Escribí el código de una página Web con la capacidad de recibir a más <br> de un millón de usuarios diariamente. <br> - Responsable de crear un comparador de tarjetas de crédito que <br> elevó las ventas del producto en un 15%. <br> - Desarrollé una aplicación bancaria especializada en seguros de auto <br> la cual recibió una calificaión de 4.8 estrellas.
+        {{experiencia}}
       </p>
 
-      <h2 align="center"><u>Desarrollo Web</u></h2>
+      <h2 align="center"><u>APTITUDES</u></h2>
       <p align = "center">
-        Flame Analytics<br>
-        A lo  largo de mi estancia  participé en más de 15 proyectos digitales y <br> colaboré con un equipo de diseñadores, copywriters creativos, project<br> managers y QEA testers.<br>
-        Reduje el porcentaje de errores mensuales de la página de inicio del<br> portal de la compañia en un 10%.<br>
-        - Como parte del comité de mejoras continuas de la empresa, colaboré <br> para optimizar los tiempos de carga de la página web en un 15%. 
+        {{habilidades}}
       </p>
-      <h2 align = "center"><u>Educación</u></h2>
+
+      <h2 align = "center"><u>LOGROS</u></h2>
       <p align = "center"> 
-        Ingeniería Técnica en Información de Sistemas<br> Universidad Complutense de Madrid<br> - Graduado con la nota más alta de la generación. <br> - 3er lugar en el Hackaton Codefest 2014<br>- Ganador de la beca de Excelencia Académica 2012. 
+        {{logros}}
       </p>
-      <h2 align = "center">Información adicional</h2>
-      <p align = "center">- Permiso de conducir B y auto propio. <br>- Disponibilidad inmediata.</p></aside>
+      <h2 align = "center"><u>Información adicional</u></h2>
+      <p align = "center">- {{info}}</p></aside>
     </section>
   
     </body>

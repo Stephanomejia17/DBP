@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <form class="form-register" action="/No_Register" method="POST" id="No_Register">
+        <h4>Usuario no encontrado</h4>
+        <h3>No hemos podido encontrar su cuenta, <a href="{{ url_for('index') }}">intentelo de nuevo</a> o <a href="{{url_for('register')}}">cree una</a></h3>
+        
+        
+    </form>
+{% endblock %}

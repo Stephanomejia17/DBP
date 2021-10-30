@@ -1,10 +1,14 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<form class="form-register" action="{{ url_for('generador') }}" method="POST">
+<form class="form-register" action="{{ url_for('curriculums') }}" method="post">
     <h4>Curriculums</h4>
-    <input type="image" src="static/curriculum1.jpg" width="300px" height="350px"/>
-    <input type="image" src="static/curriculum2.jpg" width="300px" height="350px"/>
+    <img src="static/curriculum1.jpg" width="150px" height="200px"/>
+    <img src="static/curriculum2.jpg" width="150px" height="200px"/>
+    <br>
+    <a href="{{'plantilla1'}}" class="botons">Opcion 1</a>
+    <a href="{{'plantilla2'}}" class="botons">Opcion 2</a>
+    
     
 </form>
 {% endblock %}
